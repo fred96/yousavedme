@@ -30,3 +30,11 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+
+// Lbc only
+require('../views/lbc/assets/js/app')
+
+// Lbc with theme liara (if you activate theme liara)
+// require('../views/lbc/assets/js/app-with-theme-liara')
+

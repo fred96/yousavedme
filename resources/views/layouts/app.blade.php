@@ -19,11 +19,19 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<style>
+.usm-nav-container{
+background-color:red;
+}
+</style>
+
+
+
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-success shadow-sm usm-nav-container" >
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand text-white" hef="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -32,12 +40,18 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-			<li class="nav-link" href="{{ route('home') }}">Home</li>
+                    <ul id="nav-links-container"  class="navbar-nav mr-auto">			<a class="nav-link text-white" href="{{ route('home') }}">Home</a>
 		
-			<li class="nav-link" href="{{ route('donate') }}">Donate</li>
-			<li class="nav-link" href="{{ route('projects') }}">Our Projects</li>
-                    </ul>
+			<a class="nav-link text-white" href="{{ route('donate') }}">Donate</a>
+
+			<a class="nav-link text-white" href="{{ route('projects') }}">Our Projects</a>
+
+
+<a class="nav-link text-white" href="{{ route('products') }}">Our Shop</a>     
+
+        <a class="nav-link text-white" href="{{ route('register-child') }}">Register Child</a>
+
+  </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -45,13 +59,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="text-white nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
                             
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="text-white nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else

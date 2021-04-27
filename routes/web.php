@@ -19,16 +19,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Lbc basics
+App\Lbc\LaravelBootstrapComponents::init();
+
+// abc.com/lbc if you want to have the docs for it
+App\Lbc\LaravelBootstrapComponents::initDocs();
+
+// Lbc theme liara (abc.com/liara)
+// App\Lbc\LaravelBootstrapComponents::initThemeLiara();
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/our-projects', function () {
-    return view('projects');
-});
+Route::get('/projects', [App\Http\Controllers\ProjectsController::class, 'index'])->name('projects');
 
-Route::get('/registerchild', function () {
-    return view('register-child');
-});
+Route::get('/donate', [App\Http\Controllers\DonateController::class, 'index'])->name('donate');
 
-Route::get('/donate', function () {
-    return view('donate');
-});
+Route::get('/register-child', [App\Http\Controllers\RegChildController::class, 'index'])->name('register-child');
+
+Route::get('/products', [App\Http\Controllers\ProductsController::class, 'index'])->name('products');
