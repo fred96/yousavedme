@@ -90,7 +90,10 @@ background-color:red;
                     </ul>
                 </div>
             </div>
-        </nav>
+	</nav>
+<section class="">
+@yield('carousel')
+<section>
 
         <main class="py-4">
             @yield('content')
